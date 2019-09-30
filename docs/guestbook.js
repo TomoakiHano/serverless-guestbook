@@ -7,7 +7,7 @@ const guestbook = {
   get() {
     return $.ajax({
       type: 'GET',
-      url: `https://2663b217.us-south.apiconnect.appdomain.cloud/guestbook/entries`,
+      url: `${apiUrl}/entries`,
       dataType: 'json'
     });
   },
@@ -16,7 +16,7 @@ const guestbook = {
     console.log('Sending', name, email, comment)
     return $.ajax({
       type: 'PUT',
-      url: `https://2663b217.us-south.apiconnect.appdomain.cloud/guestbook/entries`,
+      url: `${apiUrl}/entries`,
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify({
         name,
@@ -77,4 +77,3 @@ const guestbook = {
     loadEntries();
   });
 })();
-
